@@ -32,7 +32,7 @@ const songCard = (song) => {
   const album = song.album.name;
   const $albumSpan = $("<span>").text(album);
   const $songAlbum = $("<p>").text("Album: ").append($albumSpan);
-  $songAlbum.appendTo($songCard)
+  $songAlbum.appendTo($songCard);
 
   return $songCard;
 };
