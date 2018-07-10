@@ -6,6 +6,15 @@ const api = require("./api-methods");
 const allEventHandlers = () => {
   console.log("Event handlers running...");
 
+  /*
+  This function will eventually let you edit songs when you click the title of the song and then save the edited song when you click the Save button that it appends to the song section.
+
+  Currently, it runs every time you click the header  or any of its children, which is a bug; I want it to run only when you click the title the first time and not run again until after you've saved the edited song.
+
+  Also, it doesn't actually edit the song in the database; all it does right now is get the input values and push them into an array that I'll hopefully be able to do something with in the future
+
+  Finally, there's no way out of this code: once you start editing, you can't do anything else.
+  */
   const editSong = (cardId) => {
     const editId = parseInt(cardId.split("-")[1]);
     console.log(`Editing song #${editId}...`);
@@ -32,13 +41,14 @@ const allEventHandlers = () => {
       const editedArtist = allValues[1];
       const editedAlbum = allValues[2];
 
-      api
-
-      // If the artist doesn't exist, create it
-      // THEN get the artist's id
-      // THEN if the album doesn't exist, create it
-      // THEN get the album id
-      // THEN pass those, along with the new song title, into a POST
+      /*
+      So, I actually tried to do this stuff, broke my code, and had to do a huge reset, so I'm going to ignore it for the time being until I can figure out a better way to do it...
+          If the artist doesn't exist, create it
+          THEN get the artist's id
+          THEN if the album doesn't exist, create it
+          THEN get the album id
+          THEN pass those, along with the new song title, into a POST
+      */
     });
 
   };
