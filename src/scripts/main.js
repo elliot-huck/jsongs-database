@@ -1,34 +1,16 @@
 // This module runs the actual program and also serves as my checklist for all the stuff I need to do
 // Author: Elliot Huck
 
-const api = require("./api-methods");
-const loadAllSongs = () => {
-  console.log("Loading all songs...")
-  api.getSongs().then(allSongs => {
-    allSongs.forEach(song => {
-      console.log(song);
-      loadSong(song);
-    });
-  });
-};
+const loadAllSongs = require("./load-songs");
 
 loadAllSongs();
 
-const loadSong = (song) => {
-  const title = song.title;
-  const artist = song.artist.name;
-  const album = song.album.name;
-  console.log(`The song ${title} was performed by ${artist} on the album ${album}`);
-};
+
 
 /*
 1. User can enter a song
 2. User can save songs to the database provided all inputs are filled
-3. All songs load from the database to the dashboard
-  a. Lay out my database
-  b. Create dashboard on index
-  c. Make a method to load individual songs from the database
-  d. Make a module run that method for all the songs
+
 4. Each song needs a checkbox that can be used to mark it as "bought" in the database
 5. User can click on song title to edit all fields of a song and hit Enter to save them to database
 6. Each song needs a delete button that can be used to remove it from the DOM and the database
