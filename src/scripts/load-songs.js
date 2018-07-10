@@ -8,7 +8,7 @@ const songCard = require("./song-card");
 const loadAllSongs = () => {
   console.log("Loading all songs...");
 
-  api.getSongs().then(allSongs => {
+  return api.getSongs().then(allSongs => {
     allSongs.forEach(song => {
       const $songCard = songCard(song);
       $songCard.appendTo("#dashboard");

@@ -2,8 +2,13 @@
 // Author: Elliot Huck
 
 const loadAllSongs = require("./load-songs");
+const addEventHandlers = require("./event-handlers");
 
-loadAllSongs();
+loadAllSongs().then(resolve => {
+  console.log("All songs loaded");
+
+  addEventHandlers();
+});
 
 
 
