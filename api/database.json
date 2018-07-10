@@ -17,6 +17,7 @@
   "albums": [
     {
       "name": "Untitled",
+      "artistId": 1,
       "id": 1
     }
   ]
