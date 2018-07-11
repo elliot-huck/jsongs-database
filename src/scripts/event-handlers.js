@@ -2,6 +2,7 @@
 // Author: Elliot Huck
 
 const api = require("./api-methods");
+const loadAllSongs = require("./load-songs");
 
 const allEventHandlers = () => {
   console.log("Event handlers running...");
@@ -27,7 +28,7 @@ const allEventHandlers = () => {
     const $saveButton = $("<button>").text("Save");
     $saveButton.appendTo($(`#${cardId}`));
 
-  // When $saveButton is clicked...
+    // When $saveButton is clicked...
     // Get values for all the input fields
     $saveButton.click(event => {
       console.log("Clicked the save button");
@@ -40,6 +41,10 @@ const allEventHandlers = () => {
       const editedTitle = allValues[0];
       const editedArtist = allValues[1];
       const editedAlbum = allValues[2];
+      api.editSong(editId, editedTitle, editedArtist, editedAlbum)
+        .then(response => {
+          loadAllSongs();
+        });
 
       /*
       So, I actually tried to do this stuff, broke my code, and had to do a huge reset, so I'm going to ignore it for the time being until I can figure out a better way to do it...
@@ -53,22 +58,25 @@ const allEventHandlers = () => {
 
   };
 
-// Event listener for all song titles to edit songs
-const $allSongTitles = $(".song > h3");
-$allSongTitles.each((index, element) => {
-  console.log(element);
-  $(element).click(event => {
-    console.log("Header clicked");
-    const $songCardId = $(event.currentTarget).parent().attr("id");
-    editSong($songCardId);
+  // Event listener for all song titles to edit songs
+  const $allSongTitles = $(".song > h3 > span");
+  $allSongTitles.each((index, element) => {
+    console.log(index);
+    $(element).click(event => {
+      console.log(event.target.tagName);
+      if (event.target.tagName !== "INPUT") {
+        console.log("Header clicked");
+        const $songCardId = $(event.currentTarget).parent().parent().attr("id");
+        editSong($songCardId);
+      }
+    });
   });
-});
 
-// Event listener for the New Song button
+  // Event listener for the New Song button
 
-// Event listener for the Purchased checkbox
+  // Event listener for the Purchased checkbox
 
-// Event listener for the Delete button
+  // Event listener for the Delete button
 
 };
 

@@ -6,6 +6,17 @@
 const apiMethods = {
   getSongs: () => {
     return $.ajax("http://localhost:3000/songs");
+  },
+  editSong: (editId, title, artist, album) => {
+    return $.ajax({
+      url: `http://localhost:3000/songs/${editId}`,
+      type: "PUT",
+      data: {
+        title: title,
+        artist: artist,
+        album: album
+      }
+    });
   }
 
 };
