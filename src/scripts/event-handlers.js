@@ -32,7 +32,11 @@ const allEventHandlers = () => {
       const editedArtist = allValues[1];
       const editedAlbum = allValues[2];
 
-      api
+      console.log(`
+      New title: ${editedTitle}
+      New artist: ${editedArtist}
+      New album: ${editedAlbum}
+      `);
 
       // If the artist doesn't exist, create it
       // THEN get the artist's id
