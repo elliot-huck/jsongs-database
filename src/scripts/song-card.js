@@ -24,12 +24,12 @@ const songCard = (song) => {
   const $songTitle = $("<h3>").append($titleSpan);
   $songTitle.appendTo($songCard);
 
-  const artist = song.artist.name;
+  const artist = song.artist;
   const $artistSpan = $("<span>").text(artist);
   const $songArtist = $("<p>").text("Artist: ").append($artistSpan);
   $songArtist.appendTo($songCard);
 
-  const album = song.album.name;
+  const album = song.album;
   const $albumSpan = $("<span>").text(album);
   const $songAlbum = $("<p>").text("Album: ").append($albumSpan);
   $songAlbum.appendTo($songCard);

@@ -2,22 +2,9 @@
   "songs": [
     {
       "title": "Stairway to Heaven",
-      "artistId": 1,
-      "albumId": 1,
+      "artist": "Led Zeppelin",
+      "album": "Untitled",
       "purchased": false,
-      "id": 1
-    }
-  ],
-  "artists": [
-    {
-      "name": "Led Zeppelin",
-      "id": 1
-    }
-  ],
-  "albums": [
-    {
-      "name": "Untitled",
-      "artistId": 1,
       "id": 1
     }
   ]

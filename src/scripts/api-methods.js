@@ -5,7 +5,7 @@
 
 const apiMethods = {
   getSongs: () => {
-    return $.ajax("http://localhost:3000/songs?_expand=artist&_expand=album");
+    return $.ajax("http://localhost:3000/songs");
   }
 
 };
