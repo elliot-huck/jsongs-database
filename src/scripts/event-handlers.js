@@ -41,14 +41,12 @@ const allEventHandlers = () => {
       const editedArtist = allValues[1];
       const editedAlbum = allValues[2];
 
-      /*
-      So, I actually tried to do this stuff, broke my code, and had to do a huge reset, so I'm going to ignore it for the time being until I can figure out a better way to do it...
-          If the artist doesn't exist, create it
-          THEN get the artist's id
-          THEN if the album doesn't exist, create it
-          THEN get the album id
-          THEN pass those, along with the new song title, into a POST
-      */
+      console.log(`
+      New title: ${editedTitle}
+      New artist: ${editedArtist}
+      New album: ${editedAlbum}
+      `);
+
     });
 
   };
