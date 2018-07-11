@@ -6,7 +6,6 @@ const addEventHandlers = require("./event-handlers");
 
 loadAllSongs().then(resolve => {
   console.log("All songs loaded");
-
   addEventHandlers();
 });
 

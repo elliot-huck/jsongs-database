@@ -1,9 +1,1 @@
-How to get started:
-1. Clone this repo
-2. From the src directory:
-  a. Run $ npm install
-  b. Run $ grunt
-3. From the dist directory:
-  a. Run hs
-
-(Also: make sure you push any changes up to GitHub from the root directory)
+The ERD I made for this exercise is at: https://drive.google.com/file/d/1ywvnlW2X5KcUtD6J7YJJmxLma2BJqOKg/view?usp=sharing
